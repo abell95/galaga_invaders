@@ -2,4 +2,4 @@
 
 A retro remix of Galaga and Space Invaders
 
-(c) 2019 Andrew Bell
+(c) 2019 Andrew Bell, Brian Christensen
