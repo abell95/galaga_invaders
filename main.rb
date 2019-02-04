@@ -2,9 +2,11 @@ class GalagaInvaders
   def initialize
     @caption = "Galaga Invaders"
     @active = false
+    @playerShip = PlayerShip.new
   end
 
   def update
+    @playerShip.update
   end
 
   def draw
