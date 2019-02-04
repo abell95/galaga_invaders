@@ -1,3 +1,4 @@
+require './player_bullet.rb'
 
 class PlayerShip
   def initialize(position, hitbox)
@@ -10,7 +11,7 @@ class PlayerShip
   end
   
   def shoot
-    bullet = Bullet.new(@position)
+    bullet = PlayerBullet.new(@position, "player")
     bullet.fire()
   end
 
