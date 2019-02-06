@@ -4,14 +4,18 @@ class GalagaInvaders
   def initialize
     @caption = "Galaga Invaders"
     @active = false
-	 @player = PlayerShip.new
+    @ship.Ship.new
+    @fort.Fort.new
+    @alien.Alien.new
+    @ufo.Ufo.new
+    @big_alien.BigAlien.new
   end
 
   def update
   end
 
   def draw
-    @player.draw
+    @ship.draw
   end
 
   def show
