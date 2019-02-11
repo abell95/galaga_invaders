@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class GalagaInvaders
   def initialize
     @caption = "Galaga Invaders"
@@ -10,9 +12,11 @@ class GalagaInvaders
   end
 
   def update
+    @ship.update
   end
 
   def draw
+    @ship.draw
   end
 
   def show
