@@ -6,17 +6,22 @@ class GalagaInvaders
     @active = false
     @ship = Ship.new
     @fort = Fort.new
-    @alien =Alien.new
     @ufo = Ufo.new
-    @big_alien = BigAlien.new
+    @wave = Wave.new
   end
 
   def update
     @ship.update
+    @fort.update
+    @ufo.update
+    @wave.update
   end
 
   def draw
     @ship.draw
+    @fort.draw
+    @ufo.draw
+    @wave.draw
   end
 
   def show
