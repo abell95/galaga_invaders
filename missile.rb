@@ -1,4 +1,4 @@
-require './collision.rb'
+require_relative 'collision'
 
 class PlayerBullet
   
