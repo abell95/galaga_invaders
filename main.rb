@@ -12,6 +12,7 @@ class GalagaInvaders
   end
 
   def update
+    @ship.update
   end
 
   def draw
@@ -25,7 +26,7 @@ class GalagaInvaders
       draw
     end
   end
-  
+
 end
 
 GalagaInvaders.new.show

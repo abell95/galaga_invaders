@@ -5,14 +5,24 @@ class PlayerShip
     @position = position
 	  @hitbox = hitbox
   end
-  
+
   def move(position)
     @position = position
   end
-  
+
   def shoot
     bullet = PlayerBullet.new(@position, "player")
     bullet.fire()
+  end
+
+  def update(playerShip)
+    if playerShip.isHit
+
+    end
+  end
+
+  def isHit(playerShip, bullet)
+
   end
 
   def key_pressed(key)
@@ -25,5 +35,5 @@ class PlayerShip
       shoot()
     end
   end
-  
+
 end
