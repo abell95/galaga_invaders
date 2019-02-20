@@ -1,6 +1,6 @@
 require_relative 'collision'
 
-class PlayerBullet
+class PlayerMissle
   
   def initialize(xPosition, yPosition)
     @xPosition = xPosition
@@ -12,7 +12,7 @@ class PlayerBullet
   end
 
   def Fire
-    Collision.add_player_bullet(self)
+    Collision.add_player_missle(self)
   end
 
 end
