@@ -1,4 +1,5 @@
 require_relative 'ship'
+require_relative 'fort'
 
 class GalagaInvaders
 
