@@ -1,10 +1,16 @@
-require_relative 'player'
+require_relative 'ship'
 
 class GalagaInvaders
+
+  WIDTH = 1920
+  HEIGHT = 1080
+
+  attr_accessor :ship
+
   def initialize
     @caption = "Galaga Invaders"
     @active = false
-    @ship = Ship.new
+    @ship = Ship.new(WIDTH, HEIGHT)
     @fort = Fort.new
     @ufo = Ufo.new
     @wave = Wave.new
@@ -29,6 +35,15 @@ class GalagaInvaders
     while true do
       update
       draw
+      key_pressed(gets.chomp)
+    end
+  end
+
+  def key_pressed(key)
+    if key == 'a'
+      ship.move_left
+    elsif key == 'd'
+      ship.move_right
     end
   end
 
