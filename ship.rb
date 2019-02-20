@@ -1,5 +1,3 @@
-require './player_bullet.rb'
-
 class Ship
   WIDTH = 100
   HEIGHT = 100
