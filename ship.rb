@@ -1,39 +1,55 @@
 require './player_bullet.rb'
 
-class PlayerShip
-  def initialize(position, hitbox)
-    @position = position
-	  @hitbox = hitbox
+class Ship
+  WIDTH = 100
+  HEIGHT = 100
+  DEFAULT_VELOCITY = 5
+  ORDNANCE_VELOCITY = -10
+
+  attr_accessor :x, :y
+
+  def initialize(screen_width, screen_height)
+    @x = screen_width / 2
+    @y = screen_height - half_height
   end
 
-  def move(position)
-    @position = position
+  def ordnance_velocity
+    ORDNANCE_VELOCITY
   end
 
-  def shoot
-    bullet = PlayerBullet.new(@position, "player")
-    bullet.fire()
+  def muzzle_location
+    Vector.new(x, top_edge)
   end
 
-  def update(playerShip)
-    if playerShip.isHit
-
-    end
+  def move_left
+    move(-DEFAULT_VELOCITY)
   end
 
-  def isHit(playerShip, bullet)
-
+  def move_right
+    move(DEFAULT_VELOCITY)
   end
 
-  def key_pressed(key)
-    case key
-    when 'a'
-      move(-10)
-    when 'd'
-      move(10)
-    when 'Space'
-      shoot()
-    end
+  def draw
+    puts self
   end
 
+  def to_s
+    "✈️ (#{x}, #{y})"
+  end
+
+  private
+
+  def move(delta)
+    self.x += delta
+  end
+
+  def top_edge
+    y - half_height
+  end
+
+  def half_height
+    HEIGHT / 2
+  end
 end
+
+Vector = Struct.new(:x, :y)
