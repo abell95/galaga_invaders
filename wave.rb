@@ -1,6 +1,8 @@
 require_relative 'wing'
 
 class Wave
+  include Formation
+
   WINGS = 5
 
   attr_reader :wings
@@ -10,21 +12,22 @@ class Wave
   end
 
   def generate_wings
-    wings = []
-    for i in 0...WINGS do
-      wings << Wing.new
-    end
+    generate(wing, WINGS)
   end
 
-  def draw
-    wings.each do { |wing| wing.draw }
+  def draw_wings
+    draw(wings)
   end
 
   def update
-    wings.each do |wing|
-      if not wing.empty?
-        wing.update
-      end
+    update(wings)
+  end
+
+  def level_up?
+    if empty?(wings)
+      true
+    else
+      false
     end
   end
 end
