@@ -11,6 +11,6 @@ class Time
   end
 
   def increase_level
-    spawn_next_wave()
+    spawn_next_wave
   end
 end
