@@ -1,8 +1,11 @@
 class Time
-  attr_accessor :wave
+  TIMER = TRUE
+  
+  attr_accessor :wave :hanger
 
-  def initialize(wave)
+  def initialize(wave, hanger)
     @wave = wave
+    @hanger = hanger
   end
 
   def level_change
@@ -13,4 +16,8 @@ class Time
   def increase_level
     spawn_next_wave
   end
+
+  def game_over
+    hanger.empty
+    timer = False;
 end
