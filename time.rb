@@ -1,7 +1,7 @@
 class Time
   TIMER = TRUE
-  
-  attr_accessor :wave :hanger
+
+  attr_accessor :wave, :hanger
 
   def initialize(wave, hanger)
     @wave = wave
