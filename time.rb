@@ -19,5 +19,6 @@ class Time
 
   def game_over
     hanger.empty
-    timer = False;
+    timer = False
+  end
 end
