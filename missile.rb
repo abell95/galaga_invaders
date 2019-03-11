@@ -24,7 +24,5 @@ class Missile
   end
 
   def vector
-
   end
-
 end
