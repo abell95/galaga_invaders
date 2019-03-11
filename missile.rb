@@ -1,18 +1,30 @@
 require_relative 'collision'
 
-class PlayerMissle
-  
-  def initialize(xPosition, yPosition)
-    @xPosition = xPosition
-    @yPosition = yPosition
+class Missile
+  attr_accessor :location, :velocity
+
+  def initialize(location)
+    @location = location
+  end
+
+  def fire(velocity)
+    @velocity = velocity
   end
 
   def update
-    @yPosition += 20
+    location.y += velocity
   end
 
-  def Fire
-    Collision.add_player_missle(self)
+  def draw
+    puts self
+  end
+
+  def to_s
+    "🚀, (#{location})"
+  end
+
+  def vector
+
   end
 
 end
