@@ -1,7 +1,10 @@
 class Alien
-  def initialize(position, hitbox)
-    @position = position
-    @hitbox = hitbox
+
+  attr_accessor :x, :y
+
+  def initialize(x, y)
+    @x = x
+    @y = y
   end
 
   def move()
@@ -11,13 +14,20 @@ class Alien
   def shoot()
 
   end
+
+  def muzzle_location()
+    y - height
+  end
+
+  def center
+    x + width / 2
 
 end
 
-class BigAlien
-  def initialize(position, hitbox)
-    @position = position
-    @hitbox = hitbox
+class SmallAlien > Alien
+
+  def initialize(sprite)
+
   end
 
   def move()
@@ -25,6 +35,25 @@ class BigAlien
   end
 
   def shoot()
+
+  end
+end
+
+
+class BigAlien > Alien
+  def initialize(sprite)
+
+  end
+
+  def move()
+
+  end
+
+  def shoot()
+
+  end
+
+  def capture()
 
   end
 end
