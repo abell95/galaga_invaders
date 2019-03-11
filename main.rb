@@ -1,13 +1,14 @@
 require_relative 'ship'
 require_relative 'fort'
 require_relative 'wave'
+require_relative 'missile_collection'
 
 class GalagaInvaders
 
   WIDTH = 1920
   HEIGHT = 1080
 
-  attr_accessor :ship
+  attr_accessor :ship, :missiles
 
   def initialize
     @caption = "Galaga Invaders"
@@ -16,6 +17,7 @@ class GalagaInvaders
     @fort = Fort.new
     @ufo = Ufo.new
     @wave = Wave.new
+    @missiles = MissileCollection.new
   end
 
   def update
@@ -23,6 +25,7 @@ class GalagaInvaders
     @fort.update
     @ufo.update
     @wave.update
+    missiles.update
   end
 
   def draw
@@ -30,6 +33,7 @@ class GalagaInvaders
     @fort.draw
     @ufo.draw
     @wave.draw
+    missiles.draw
   end
 
   def show
@@ -46,6 +50,8 @@ class GalagaInvaders
       ship.move_left
     elsif key == 'd'
       ship.move_right
+    elsif key == ' '
+      missiles.shoot_from(ship)
     end
   end
 
