@@ -29,7 +29,7 @@ class GalagaInvaders
       wave.update
       missiles.update
 
-      collision(missiles)  
+      collision_detector(missiles)  
       
       if ufo.hit
         score_bonus
