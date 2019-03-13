@@ -37,6 +37,11 @@ class GalagaInvaders
       # time dictates freq of squadrons
       if time.release_squad
         #instantiate and draw new squadron?
+      
+      if wave.formed
+        at_some_cool_timer_related_function do
+          wave.launch_attack
+        end
 
       if mothership.capture
         # do something crazy with player ship
