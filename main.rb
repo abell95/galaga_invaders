@@ -30,12 +30,11 @@ class GalagaInvaders
       missiles.update
 
       collision_detector(missiles)  
-      
+      # this in collision_detector?
       if ufo.hit
         score_bonus
 
-      # time dictates freq of squadrons
-      if time.release_squad
+      wave.release_squad(time)
         #instantiate and draw new squadron?
       
       if wave.formed
@@ -47,8 +46,7 @@ class GalagaInvaders
         # do something crazy with player ship
         
       if wave.empty
-        # next level
-        # time class may have this logic?    
+        time.level_update
     else game_over
   end
 
