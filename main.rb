@@ -18,21 +18,40 @@ class GalagaInvaders
     @ufo = Ufo.new
     @wave = Wave.new
     @missiles = MissileCollection.new
+    @time = Time.new
   end
 
   def update
-    @ship.update
-    @fort.update
-    @ufo.update
-    @wave.update
-    missiles.update
+    if time.active
+      ship.update
+      fort.update
+      ufo.update
+      wave.update
+      missiles.update
+
+      collision(missiles)  
+      
+      if ufo.hit
+        score_bonus
+
+      # time dictates freq of squadrons
+      if time.release_squad
+        #instantiate and draw new squadron?
+
+      if mothership.capture
+        # do something crazy with player ship
+        
+      if wave.empty
+        # next level
+        # time class may have this logic?    
+    else game_over
   end
 
   def draw
-    @ship.draw
-    @fort.draw
-    @ufo.draw
-    @wave.draw
+    ship.draw
+    fort.draw
+    ufo.draw
+    wave.draw
     missiles.draw
   end
 
